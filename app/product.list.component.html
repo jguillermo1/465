@@ -1,0 +1,21 @@
+<div style="text-align:center">
+<h1 [innerText]='"Welcome to " + title + "!"'></h1>
+Filter:
+<input [(ngModel)]='listFilter' (keyup)='onKeyup($event)'>
+</div>
+    <table *ngIf='filteredMovies && filteredMovies.length > 0'>
+        <tr>
+            <th>Image</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Release Date</th>
+        </tr>
+        <tr *ngFor='let movie of filteredMovies'>
+            <td>
+                <img src= '{{movie.imageURL}}' alt="Images" height='42' length='28' >
+            </td>
+            <td> {{ movie.title }} ({{ movie.uid  | uppercase }})</td>
+            <td> {{ movie.price | currency}}</td>
+            <td> {{ movie.releaseDate }}</td>
+        </tr>
+    </table>

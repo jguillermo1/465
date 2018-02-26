@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+
+
+table, th , td {
+  border: 3px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+table tr:nth-child(odd){
+  background-color: #C1E4AA;
+}
+  table tr:nth-child(even){
+    background-color: #A5B3E1;
+  }
