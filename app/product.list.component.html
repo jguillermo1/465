@@ -9,13 +9,23 @@ Filter:
             <th>Title</th>
             <th>Price</th>
             <th>Release Date</th>
+            <th>Rating</th>
         </tr>
         <tr *ngFor='let movie of filteredMovies'>
             <td>
-                <img src= '{{movie.imageURL}}' alt="Images" height='42' length='28' >
+                <!--<img src= '{{movie.imageURL}}' alt="Images" height='42' length='28' >-->
+                <img [src]='movie.imageURL' height='42' length='28' >
             </td>
             <td> {{ movie.title }} ({{ movie.uid  | uppercase }})</td>
             <td> {{ movie.price | currency}}</td>
             <td> {{ movie.releaseDate }}</td>
+            <td>
+              <app-star
+                   [rating]='movie.starRating'
+                   (ratingClicked)='onRatingClicked($event)'
+              >
+             </app-star>
+          </td>
         </tr>
     </table>
+

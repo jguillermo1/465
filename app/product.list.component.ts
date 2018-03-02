@@ -23,7 +23,7 @@ export class ProductListComponent implements OnInit{
           "price": 19.99,
           "discount": 0,
           "starRating": 4,
-          "imageURL": "./assets/Shrek.jpg"
+          "imageURL": "./assets/images/Shrek.jpg"
         }, {
           "uid": "D-410",
           "title": "Happy Feet",
@@ -31,7 +31,7 @@ export class ProductListComponent implements OnInit{
           "price": 16.99,
           "discount": 0,
           "starRating": 4.5,
-          "imageURL": "./assets/HappyFeet.gif"
+          "imageURL": "./assets/images/HappyFeet.gif"
         },
         {
           "uid": "P-002",
@@ -40,7 +40,7 @@ export class ProductListComponent implements OnInit{
           "price": 22.99,
           "discount": 0,
           "starRating": 5,
-          "imageURL": "./assets/ToyStory.jpeg"
+          "imageURL": "./assets/images/ToyStory.jpeg"
         },
         {
           "uid": "P-003",
@@ -49,7 +49,7 @@ export class ProductListComponent implements OnInit{
           "price": 24.99,
           "discount": 0,
           "starRating": 5,
-          "imageURL": "./assets/ToyStory2.jpg"
+          "imageURL": "./assets/images/ToyStory2.jpg"
         },
         {
           "uid": "P-013",
@@ -58,7 +58,7 @@ export class ProductListComponent implements OnInit{
           "price": 24.99,
           "discount": 0,
           "starRating": 5,
-          "imageURL": "./assets/TheIncredibles.jpg"
+          "imageURL": "./assets/images/TheIncredibles.jpg"
         }
       ];
     title: string = "Movie Database";
@@ -78,8 +78,12 @@ filterMovies(filter :string): Imovie[]    {
     return this.movies.filter((m:Imovie) =>
         m.title.indexOf(filter) !==-1
         );
-    }
+  }
+onRatingClicked(msg) {
+  console.log(msg)
+  }
 }
+
 
 
 export interface Imovie{
